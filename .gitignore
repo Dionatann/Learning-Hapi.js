@@ -1,0 +1,49 @@
+# Diretório node_modules que contém pacotes instalados
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Diretórios de ambiente local e de configuração
+.env
+.env.local
+.env.*.local
+
+# Diretórios temporários
+temp/
+tmp/
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de build
+dist/
+build/
+
+# IDEs
+.vscode/
+.idea/
+
+# Cobertura de testes
+coverage/
+
+# pacotes de bloqueio do sistema operacional ou IDE
+*.lock
+
+# Arquivos relacionados a Docker
+docker-compose.yml
+Dockerfile
+
+# Arquivos de configuração pessoal
+*.sublime-workspace
+*.sublime-project
+
+# Arquivos de depuração
+*.swp
+*.swo
+*.bak
