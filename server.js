@@ -1,27 +1,33 @@
-const Hapi = require('@hapi/hapi');  // Certifique-se de que está usando "require"
+const Hapi = require('@hapi/hapi');
+const path = require("path");
 
-const init = async () => {
-
+const init = async() => {
     const server = Hapi.server({
         port: 3000,
-        host: 'localhost'  // Certifique-se de que "localhost" está entre aspas
-    });
+        host: 'localhost'
+    })
 
-    server.route({
-        method: 'GET',
-        path: '/',
-        handler: (request, h) => {
-            return 'Hello, Hapi!';
-        }
-    });
+    // config do view engine (template engine)
+    await server.register(require("@hapi/vision"));
 
+    server.views({
+        engines: { html: require('handlebars')}, // using handlebars com template engine
+        path: path.join(__dirname, 'views') // caminho do dir para encontras arquivos .html
+    })
+
+    // import e resgitrar as rotas de outro arquivos 
+    const routes = require('./routes/index');
+    const otherRoutes = require('./routes/page2');
+
+    server.route(routes);
+    server.route(otherRoutes);
     await server.start();
-    console.log("Server inicializado em:", server.info.uri);
-};
+    console.log(`Servidor rodando em: ${server.info.uri}`);
+}
 
-
+// Tratamento de erros não capturados
 process.on('unhandledRejection', (err) => {
-    console.log(err);  // Imprime o erro real
+    console.log(err);
     process.exit(1);
 });
 
