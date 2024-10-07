@@ -19,6 +19,7 @@ Copiar código
   ├── package.json            # Configurações de dependências e scripts
   ├── package-lock.json       # Versões fixas das dependências
   └── .gitignore              # Arquivos e diretórios a serem ignorados pelo Git
+  
 Detalhes dos Arquivos
 routes/all_routes.js: Define todas as rotas da aplicação. Cada rota aponta para um template HTML renderizado com dados dinâmicos, se necessário.
 
@@ -34,30 +35,4 @@ npm (geralmente já vem com o Node.js)
 Instalação
 Siga estas etapas para rodar o projeto localmente:
 
-Clone o repositório para o seu ambiente local:
 
-bash
-Copiar código
-git clone https://github.com/seu-usuario/Learning-Hapi.js.git
-Navegue até o diretório do projeto:
-
-bash
-Copiar código
-cd my_project
-Instale as dependências necessárias:
-
-bash
-Copiar código
-npm install
-Executando o Servidor
-Após a instalação, execute o servidor Hapi.js com o comando abaixo:
-
-bash
-Copiar código
-node server.js
-Agora o servidor estará rodando em http://localhost:3000.
-
-Manipulação do DOM com Cheerio.js
-Para manipular os elementos da página e fazer modificações dinâmicas no conteúdo do HTML, o Cheerio.js foi usado. Ele permite selecionar e modificar elementos HTML de forma rápida e eficiente.
-
-Exemplo básico de manipulação de um título HTML em server.js:
